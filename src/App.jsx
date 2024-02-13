@@ -65,6 +65,7 @@ function App() {
           <div>
                <h1 className="title">{getTitle()}</h1>
               {[loveImg, yesImg, yes2, yes3, yes4, yes5].map((item, i) => <img key={i} style={{
+                  margin: '0 auto',
                   maxWidth: 300,
                   maxHeight: 300,
                   display: i === count ? 'block' : 'none'
