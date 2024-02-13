@@ -42,24 +42,6 @@ function App() {
         };
   }, [ref.current]); // Зависимость пуста, чтобы обработчик события добавился только один раз
 
-
-    const getImg = () => {
-        switch (count) {
-            case 0:
-                return loveImg
-            case 1:
-                return yesImg
-            case 2:
-                return yes2
-            case 3:
-                return yes3
-            case 4:
-                return yes4
-            case 5:
-                return yes5
-        }
-    }
-
     const getTitle = () => {
         switch (count) {
             case 0:
@@ -82,10 +64,11 @@ function App() {
       <main className="main">
           <div>
                <h1 className="title">{getTitle()}</h1>
-              <img style={{
+              {[loveImg, yesImg, yes2, yes3, yes4, yes5].map((item, i) => <img key={i} style={{
                   maxWidth: 300,
-                  maxHeight: 300
-              }} src={getImg()} className="love"/>
+                  maxHeight: 300,
+                  display: i === count ? 'block' : 'none'
+              }} src={item} className="love"/>)}
               <div className="btn-container">
                   <button className="yes" onClick={() => setCount(prev => prev === 5 ? prev : prev + 1)}>Да!</button>
                   <button ref={ref} className="no">Нет :(</button>
