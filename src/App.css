@@ -7,11 +7,12 @@
   font-family: "Pangolin", cursive;
   font-weight: 600;
   font-style: normal;
+  height: 100%;
 }
 
 .main {
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   /*background-image: url("./assets/test.jpeg");*/
   /*background-repeat: repeat;*/
   /*background-color: bisque;*/
