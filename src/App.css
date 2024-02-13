@@ -50,7 +50,7 @@
 .yes {
   background-color: rgba(245, 40, 145, 0.8);
   color: white;
-  padding: 8px;
+  padding: 12px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
   box-sizing: border-box;
@@ -61,7 +61,7 @@
 .no {
   background-color: rgba(245, 40, 145, 0.8);
   color: white;
-  padding: 8px;
+  padding: 12px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
   box-sizing: border-box;

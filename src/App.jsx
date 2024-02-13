@@ -1,12 +1,17 @@
 import './App.css'
 import loveImg from './assets/love.gif'
 import yesImg from './assets/yesImg.gif'
-import noImg from './assets/no.gif'
+import yes2 from './assets/yes2.gif'
+import yes3 from './assets/yes3.gif'
+import yes4 from './assets/yes4.gif'
+import yes5 from './assets/yes5.gif'
+
+
 import {useEffect, useRef, useState} from "react";
 
 function App() {
     const ref = useRef(null)
-    const [state, setState] = useState(null)
+    const [count, setCount] = useState(0)
 
     useEffect(() => {
         const handleMouseOver = () => {
@@ -39,19 +44,37 @@ function App() {
 
 
     const getImg = () => {
-        if (state === null) {
-            return loveImg
+        switch (count) {
+            case 0:
+                return loveImg
+            case 1:
+                return yesImg
+            case 2:
+                return yes2
+            case 3:
+                return yes3
+            case 4:
+                return yes4
+            case 5:
+                return yes5
         }
-
-        return state ? yesImg : noImg
     }
 
     const getTitle = () => {
-        if (state === null) {
-            return 'Ты станешь моей валентинкой?'
+        switch (count) {
+            case 0:
+                return 'Ты станешь моей валентинкой?'
+            case 1:
+                return 'Ура, Спасибо!'
+            case 2:
+                return 'Ура ура урааа!!!'
+            case 3:
+                return 'Круто круто круто!!!!!'
+            case 4:
+                return 'ДАААААААА!!! ехуууу!!!!'
+            case 5:
+                return <>&#129392; &#129392; &#129392; &#129392; &#129392; &#129392;</>
         }
-
-        return state ? 'Ура, Спасибо!' : 'Такой ответ не принимается!'
     }
 
 
@@ -59,10 +82,13 @@ function App() {
       <main className="main">
           <div>
                <h1 className="title">{getTitle()}</h1>
-              <img src={getImg()} className="love"/>
+              <img style={{
+                  maxWidth: 300,
+                  maxHeight: 300
+              }} src={getImg()} className="love"/>
               <div className="btn-container">
-                  <button className="yes" onClick={() => setState(true)}>Да!</button>
-                  <button ref={ref} className="no" onClick={() => setState(false)}>Нет :(</button>
+                  <button className="yes" onClick={() => setCount(prev => prev === 5 ? prev : prev + 1)}>Да!</button>
+                  <button ref={ref} className="no">Нет :(</button>
               </div>
           </div>
       </main>
